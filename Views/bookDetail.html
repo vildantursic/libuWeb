@@ -1,0 +1,31 @@
+<div class="container">
+	<div class="row">
+		<div class="col-lg-4">
+			<img ng-src="{{book.image}}" alt="" class="book-image">
+		</div>
+		<div class="col-lg-8">
+			<p><strong>Name: </strong>{{book.name}}</p>
+			<p><strong>Author: </strong>{{book.writer}}</p>
+			<p><strong>Year: </strong>{{book.year}}</p>
+			<p><strong>Description: </strong>{{book.description}}</p>
+		<!--	<p><strong>Image: </strong>{{book.image}}</p> -->
+			
+			<a href="../Books/{{book.pdf}}.pdf"><button class="btn btn-success">Download</button></a>
+		</div>
+	</div>
+	<div class="row comment-section">
+		<div class="col-lg-12">
+			<div ng-repeat="comment in book.comments">
+				<h4>{{comment.name}}</h4>
+				<p>{{comment.comment}}</p>
+				<button ng-click="deleteComment(comment.uid)" ng-show="admin">X</button>
+				<div class="breake"></div>
+			</div>
+		</div>
+		<div class="col-lg-12">
+			<input type="text" class="form-control" placeholder="Name" ng-model="comment.name">
+			<input type="text" class="form-control" placeholder="Content" ng-model="comment.comment">
+			<button class="btn btn-primarry" ng-click="addComment(comment)">Add</button>
+		</div>
+	</div>
+</div>

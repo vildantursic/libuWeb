@@ -1,0 +1,42 @@
+<div class="container">
+
+   <div class="container">
+  <div class="row">
+    <h1>Profile</h1>
+
+    
+
+    <table class="table table-bordered">
+      <tr>
+        <!--<th>ID</th>-->
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Address</th>
+      </tr>
+      <tr ng-repeat="user in users | filter : search">
+        <!--<td><p id="id{{user.$id}}">{{user.uid}}</p></td>-->
+        <td><p id="name{{user.$id}}">{{user.name}}</p></td>
+        <td><p id="email{{user.$id}}">{{user.email}}</p></td>
+        <td><p id="phone{{user.$id}}">{{user.phone}}</p></td>
+        <td><p id="address{{user.$id}}">{{user.address}}</p></td>
+
+
+    
+      </tr>  
+      <tr>
+        <td><input class="form-control" ng-model="user.name"/></td>
+        <td><input class="form-control" ng-model="user.email"/></td>
+        <td><input class="form-control" ng-model="user.phone"/></td>
+        <td><input class="form-control" ng-model="user.address"/></td>
+
+      </tr>  
+    </table>
+  </div>
+</div>
+		<div class="col-lg-6">
+			<img src="" alt="">
+			<button class="btn btn-primary" ng-click="edit(user.id)">Edit Account</button>
+		</div>
+	</div>
+</div>
